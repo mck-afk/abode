@@ -77,6 +77,58 @@ div.noticeboard {
   flex: 1;
 }
 
+.messages {
+  flex: 1;
+  
+}
+
+.message {
+  display: flex;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+  font-family: 'GI';
+  margin-bottom: 40px;
+  background-color: white;
+}
+
+.note {
+  position: relative;
+  width: 270px;
+  height: 270px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
+  font-family: 'GI';
+  margin-bottom: 40px;
+}
+
+.note .actions {
+  display: block;
+  text-align: right;
+  margin-bottom: 15px;
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+}
+
+.right {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.left {
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
 /* Navigation */
 .navbar {
   padding: 10px;
