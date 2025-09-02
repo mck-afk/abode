@@ -5,12 +5,10 @@
 }
 
 
-/* Base */
 * {
-  margin: 0;
-  font-family: "BodoniCondC";
-  color: black;
+  margin: 0 auto;
 }
+
 * a {
   text-decoration: none;
 }
@@ -24,45 +22,24 @@ h3 {
 }
 
 .center {
-  margin-left: 70%;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Borders and noticeboard */
-
-/* div.topborder {      
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-image: url('./Assets/0_border.png');
-  background-repeat: repeat-x;
+dl, dt, dd {
+  border: 1px solid black;
 }
 
-div.bottomborder {      
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background-image: url('./Assets/0_border.png');
-  background-repeat: repeat-x;
+dt {
+  font-weight: bold;
 }
 
-div.leftborder {      
-  width: 50px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-image: url('./Assets/0_border.png');
-  background-repeat: repeat-y;
-} */
 
-
-
-div.noticeboard {      
-  position: fixed;
+.noticeboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   width: calc(100% - 10%);
   height: calc(100% - 10%);
   background-image: url('./Assets/0_noticeboard.png');
@@ -70,47 +47,25 @@ div.noticeboard {
   border-right: 25px solid #472516;
   border-top: 25px solid #472516;
   border-bottom: 25px solid #472516;
-  display: flex;
 }
 
-.section {
-  flex: 1;
-}
-
-.messages {
-  flex: 1;
-  
+@media (max-width: 1200px) {
+  .noticeboard {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .message {
-  display: flex;
   width: 300px;
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
-  font-family: 'GI';
   margin-bottom: 40px;
   background-color: white;
-}
-
-.note {
-  position: relative;
-  width: 270px;
-  height: 270px;
-  margin: 0 auto;
-  padding: 20px;
-  box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
-  font-family: 'GI';
-  margin-bottom: 40px;
-}
-
-.note .actions {
-  display: block;
-  text-align: right;
-  margin-bottom: 15px;
-  position: absolute;
-  right: 20px;
-  bottom: 5px;
 }
 
 .right {
