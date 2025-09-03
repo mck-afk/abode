@@ -11,10 +11,13 @@
 
 * a {
   text-decoration: none;
+  color: black;
 }
 
 h1 {
   text-align: center;
+  font-family: "BodoniCondC";
+  font-weight: 100;
 }
 
 h3 {
@@ -35,6 +38,12 @@ dt {
   font-weight: bold;
 }
 
+.blinkies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 .noticeboard {
   display: grid;
@@ -49,8 +58,24 @@ dt {
   border-bottom: 25px solid #472516;
 }
 
+.desk {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: calc(100% - 10%);
+  height: calc(100% - 10%);
+  background-color: #b86366;
+  border-left: 25px solid #470006;
+  border-right: 25px solid #470006;
+  border-top: 25px solid #470006;
+  border-bottom: 25px solid #470006;
+}
+
 @media (max-width: 1200px) {
   .noticeboard {
+    grid-template-columns: 1fr;
+  }
+  .desk{
     grid-template-columns: 1fr;
   }
   .section {
@@ -146,14 +171,6 @@ div.hexagon {
   width: calc(var(--s) / 2 + var(--m));
   float: left;
   height: 20%;
-}
-
-
-div.hexagon:hover {
-  background-image: url('./images/2.png');
-  background-size: 200px;
-  background-position: center;
-  color: white; 
 }
 
 
