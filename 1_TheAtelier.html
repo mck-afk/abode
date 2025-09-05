@@ -10,27 +10,28 @@
 <body>
     
     <div class="intro center">
-        <img id="doorknob" src="Assets/doorknob.png" alt="image of a golden door handle with wooden bindings" style="max-width: 25px; top: 10px; right: 10px; position: absolute;" onclick="playAudio('Assets/door_sound.mp3')"  />
+        <img id="doorknob" src="Assets/doorknob.png" alt="image of a golden door handle with wooden bindings" style="max-width: 25px; top: 10px; right: 10px; position: absolute;" onclick="playAudio('Assets/Sounds/door_sound.mp3')"  />
 
         <h2>The Atelier</h2> 
         <h3>the artist and their craft/art</h3>
-
-        <dl>
-            <dt>numerology</dt>
-            <dd>1</dd>
-
-            <dt>astrology axis</dt>
-            <dd>aries/libra</dd>
-
-            <dt>rider-waite tarot</dt>
-            <dd>1. The Magician</dd>
-
-            <dt>chakra</dt>
-            <dd>1. The Root >>></dd>
-
-            <dt>red references</dt>
-            <dd>blood sweat and tears that goes into dedication to a craft, red roses, red ink drawing attention</dd>
-        </dl>
+        <div class="dimensions">
+            <div>
+                <h4>numerology</h4>
+                <p>1</p>
+            </div>
+            <div>
+                <h4>astrology axis</h4>
+                <p>aries/libra</p>
+            </div>
+            <div>
+                <h4>tarot major arcana</h4>
+                <p>1. The Magician</p>
+            </div>
+            <div>
+                <h4>chakra</h4>
+                <p>1. The Root</p>
+            </div>
+        </div>
 
         <p>Welcome Home. This is the studio, the workshop, the artists nook and creative hobby corner. Craft Agnostic </p>
     </div>  
@@ -38,15 +39,17 @@
     <div class="desk center"> 
         <div class="section handcrafts">
             <h1>handcrafts</h1>
-            <img src="Assets/1_wax_seal.png" alt="red wax seal">
-            <div class="message">
-                <p>crochet</p>
-            </div>
+            <img src="Assets/1.jpg" alt="image of a cozy bedroom" style="max-width: 500px;" />
+            
         </div>
 
         <div class="section webcrafts">
             <h1>webcrafts</h1>
+            <img src="Assets/1_computer.gif" alt="computer gif">
+            <img src="Assets/1_book.gif" alt="book opening gif">
             <img src="Assets/1_rubber_duck.png" alt="rubber duck">
+            <img src="Assets/1_hammer.gif" alt="hammer" >
+            <img src="Assets/1_candle.gif" alt="candle gif" style="max-height: 30px;" >
             <img src="Assets/1_red_candle.gif" alt="red candle gif">
             <div class="messages">
                 <div class="message">
@@ -65,22 +68,23 @@
         <div class="section wordcrafts">
             <h1>wordcrafts</h1>
             <div class="messages">
-                <img src="Assets/1_blog.png" alt="post it note linking to my blog" onclick="window.location.href = 'index.html';" />
-                <img src="Assets/1_read.png" alt="post it note linking to recommended readings" onclick="window.location.href = 'index.html';" />
                 
                 <div class="message">
-                    <p>reading list - ismatu</p> 
+
+                    <img src="Assets/1_wax_seal.png" alt="red wax seal">
+                    <img src="Assets/1_blog.png" alt="post it note linking to my blog" />
+                    <button onclick="window.open('https://annabelle-grace-mckenzie.com/weblog_20250807', '_blank')">fifth wave feminism: motherwork is the root of all capital</button>
+                </div>
+                
+                <div class="message read">
+                    <img src="Assets/1_read.png" alt="post it note linking to recommended readings" />
+                    <button onclick="window.open('https://www.threadings.io/', '_blank')">essays that stretch the seams on this world</button>
+                </div>
+                <div class="message read">
+                    <img src="Assets/1_read.png" alt="post it note linking to recommended readings" />
+                    <button onclick="window.open('https://www.theguardian.com/books/2024/nov/21/the-serviceberry-by-robin-wall-kimmerer-review-the-fruits-of-labour', '_blank')">the gift economy that lies in the serviceberry</button>
                 </div>
             </div>
         </div>
-    <p>
-        
-        canvas
-        paintbrush
-        desk
-        computer
-        post it notes
-
-    </p>
 </body>
 </html>
