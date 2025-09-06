@@ -3,7 +3,7 @@ const roomColors = {
     "6_TheArboretum.html": "#d9b8ff",
     "5_TheAuditorium.html": "#b8e3ff",
     "1_TheAtelier.html": "#ffa0a0",
-    "0_TheAntechamber.html": "#fbb8ff",
+    "https://annas-abode.net/0_TheAntechamber": "#fbb8ff",
     "4_TheAtrium.html": "#98dc9b",
     "2_TheAlcove.html": "#ffb169",
     "3_TheApothecary.html": "#ffd861"
