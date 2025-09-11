@@ -1,5 +1,4 @@
-// Set background color based on current page
-const roomColors = {
+const roomColours = {
     "6_TheArboretum.html": "#d9b8ff",
     "5_TheAuditorium.html": "#b8e3ff",
     "1_TheAtelier.html": "#ffa0a0",
@@ -12,8 +11,8 @@ const roomColors = {
 document.addEventListener('DOMContentLoaded', function() {
     const file = location.pathname.split('/').pop();
     console.log(file);
-    if (roomColors[file]) {
-        document.body.style.backgroundColor = roomColors[file];
+    if (roomColours[file]) {
+        document.body.style.background = roomColours[file];
     }
 });
 
