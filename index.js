@@ -1,20 +1,4 @@
-const roomColours = {
-    "6_TheArboretum.html": "#d9b8ff",
-    "5_TheAuditorium.html": "#b8e3ff",
-    "1_TheAtelier.html": "",
-    "0_TheAntechamber.html": "#fbb8ff",
-    "4_TheAtrium.html": "#98dc9b",
-    "2_TheAlcove.html": "#ffb169",
-    "3_TheApothecary.html": "#ffd861"
-};
 
-document.addEventListener('DOMContentLoaded', function() {
-    const file = location.pathname.split('/').pop();
-    console.log(file);
-    if (roomColours[file]) {
-        document.body.style.background = roomColours[file];
-    }
-});
 
 
 const delay = ms => new Promise(res => setTimeout(res, ms));

@@ -1,12 +1,12 @@
 function createHoneycomb(containerId) {
     const theEstate = [
-        {id:6, title:"6. the arboretum", subtitle:"the artist and their legacy/story", link:"./6_TheArboretum.html", dimensions:{ backgroundColor: "#d9b8ff", backgroundImage: "url('./Assets/6.jpeg')", backgroundSize: "200px" }},
-        {id:5, title:"5. the auditorium", subtitle:"the artist and their society/city", link:"./5_TheAuditorium.html", dimensions:{ backgroundColor: "#b8e3ff", backgroundImage: "url('./Assets/5.jpeg')", backgroundSize: "200px" }},
-        {id:1, title:"1. the atelier", subtitle:"the artist and their art/craft", link:"./1_TheAtelier.html", dimensions:{ backgroundColor: "#ffa0a0", backgroundImage: "url('./Assets/1.jpeg')", backgroundSize: "200px" }},
-        {id:0, title:"0. the antechamber", subtitle:"the artist and their self", link:"./0_TheAntechamber.html", dimensions:{ backgroundColor: "#fbb8ff", backgroundImage: "url('./Assets/0.jpeg')", backgroundSize: "200px" }},
-        {id:4, title:"4. the atrium", subtitle:"the artist and their family/community", link:"./4_TheAtrium.html", dimensions:{ backgroundColor: "#98dc9b", backgroundImage: "url('./Assets/4.jpeg')", backgroundSize: "200px"}},
-        {id:2, title:"2. the alcove", subtitle:"the artist and their lover/muse", link:"./2_TheAlcove.html", dimensions:{ backgroundColor: "#ffb169", backgroundImage: "url('./Assets/2.jpeg')", backgroundSize: "200px" }},
-        {id:3, title:"3. the apothecary", subtitle:"the artist and their shadow/rival", link:"./3_TheApothecary.html", dimensions:{ backgroundColor: "#ffd861", backgroundImage: "url('./Assets/3.jpeg')", backgroundSize: "200px" }}
+        {id:6, title:"6. the arboretum", subtitle:"the artist and their legacy/story", link:"./6_TheArboretum.html", dimensions:{ backgroundColor: "#ad6cf8", backgroundImage: "url('./Assets/6.jpeg')", backgroundSize: "200px" }},
+        {id:5, title:"5. the auditorium", subtitle:"the artist and their society/city", link:"./5_TheAuditorium.html", dimensions:{ backgroundColor: "#3aa6ed", backgroundImage: "url('./Assets/5.jpeg')", backgroundSize: "200px" }},
+        {id:1, title:"1. the atelier", subtitle:"the artist and their art/craft", link:"./1_TheAtelier.html", dimensions:{ backgroundColor: "#d44141", backgroundImage: "url('./Assets/1.jpeg')", backgroundSize: "200px" }},
+        {id:0, title:"0. the antechamber", subtitle:"the artist and their self", link:"./0_TheAntechamber.html", dimensions:{ backgroundColor: "#e55bed", backgroundImage: "url('./Assets/0.jpeg')", backgroundSize: "200px" }},
+        {id:4, title:"4. the atrium", subtitle:"the artist and their family/community", link:"./4_TheAtrium.html", dimensions:{ backgroundColor: "#66bd6a", backgroundImage: "url('./Assets/4.jpeg')", backgroundSize: "200px"}},
+        {id:2, title:"2. the alcove", subtitle:"the artist and their lover/muse", link:"./2_TheAlcove.html", dimensions:{ backgroundColor: "#ed7b12", backgroundImage: "url('./Assets/2.jpeg')", backgroundSize: "200px" }},
+        {id:3, title:"3. the apothecary", subtitle:"the artist and their shadow/rival", link:"./3_TheApothecary.html", dimensions:{ backgroundColor: "#ffcc00", backgroundImage: "url('./Assets/3.jpeg')", backgroundSize: "200px" }}
     ];
 
 
