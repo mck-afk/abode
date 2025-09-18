@@ -85,8 +85,6 @@ h4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: calc(100% - 10%);
-  height: calc(100% - 10%);
 }
 
 @media (max-width: 1200px) {
@@ -112,13 +110,63 @@ h4 {
   background-color: white;
 }
 
-.blog {
-  background-color: maroon;
+.red {
+  background-color: #d44141;
 }
 
-.read {
-  background-color: #b86366;
+.redlight {
+  background-color: #ffa0a0;
 }
+
+.orange {
+  background-color: #ed7b12;
+}
+
+.orangelight {
+  background-color: #ffb169;
+}
+
+.yellow {
+  background-color: #ffcc00;
+}
+
+.yellowlight {
+  background-color: #ffd861;
+}
+
+.green {
+  background-color: #66bd6a;
+}
+
+.greenlight {
+  background-color: #98dc9b;
+}
+
+.blue {
+  background-color: #3aa6ed;
+}
+
+.bluelight {
+  background-color: #b8e3ff;
+}
+
+.purple {
+  background-color: #ad6cf8;
+}
+
+.purplelight {
+  background-color: #d9b8ff;
+}
+
+.pink {
+  background-color: #e55bed;
+}
+
+.pinklight {
+  background-color: #fbb8ff;
+}
+
+
 
 .right {
   -webkit-transform: rotate(2deg);
