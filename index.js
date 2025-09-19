@@ -8,3 +8,7 @@ async function playAudio(audioClip) {
     await delay(1300);
     window.location.href = 'index.html';
 }
+
+function playSound(audioClip) {
+    new Audio(audioClip).play();
+}
