@@ -75,10 +75,31 @@ p {
 }
 
 .blinkies {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 10%;
+}
+
+/* marquee https://codepen.io/sadness97/pen/BaQbJQb */
+.marquee_container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scrolling {
+  animation: marquee 0.5s linear infinite;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to { 
+    transform: translateX(-100%);
+  }
 }
 
 .noticeboard {
@@ -276,13 +297,16 @@ div.hexagon {
   height: 20%;
 }
 
-
+.kitchen {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px;
+}
 
 /* star */
 div.star {
   height: 200px;
   width: 200px;
-  background-color: pink;
   -webkit-clip-path: polygon(50% 0, 79% 90%, 2% 35%, 98% 35%, 21% 90%);
   clip-path: polygon(50% 0, 79% 90%, 2% 35%, 98% 35%, 21% 90%);
   text-align: center;
