@@ -13,17 +13,21 @@
 
 * {
   margin: 0 auto;
+  font-family: "GlacialIndifference";
 }
 
 * a {
-  text-decoration: none;
   color: black;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
   font-family: "BodoniCondC";
-  font-weight: 100;
+  
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 h3 {
@@ -33,7 +37,16 @@ h3 {
 }
 
 h4 {
-  font-family: "GlacialIndifference";
+  font-family: "BodoniCondC";
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .center {
@@ -45,7 +58,7 @@ h4 {
 .dimensions {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 20px;
+  gap: 10px;
   width: calc(100% - 10%);
   height: calc(100% - 10%);
   border-left: 5px solid #472516;
@@ -110,6 +123,10 @@ h4 {
   background-color: white;
 }
 
+.white {
+  background-color: white;
+}
+
 .red {
   background-color: #d44141;
 }
@@ -164,6 +181,17 @@ h4 {
 
 .pinklight {
   background-color: #fbb8ff;
+}
+
+.abodetable {
+  border: 1px solid black;;
+  border-collapse: collapse;
+  font-family: GlacialIndifference;
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
 }
 
 
