@@ -68,7 +68,6 @@ p {
 }
 
 .neighbours {
-  width: 60%;
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 2px;
@@ -81,17 +80,21 @@ p {
   width: 10%;
 }
 
-/* marquee https://codepen.io/sadness97/pen/BaQbJQb */
-.marquee_container {
-  overflow: hidden;
-  white-space: nowrap;
+.vertical {
+  display: grid;
+  grid-template-columns: auto;
+  width: calc(100% - 10%);
+  height: 40px;
 }
 
-.scrolling {
-  animation: marquee 0.5s linear infinite;
-  display: inline-block;
-  padding-right: 10px;
+.city {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  width: calc(100% - 10%);
+  height: calc(100% - 10%);
 }
+
 
 @keyframes marquee {
   from {
