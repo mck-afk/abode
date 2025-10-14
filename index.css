@@ -73,6 +73,12 @@ p {
   gap: 2px;
 }
 
+.twocol {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2px;
+}
+
 .blinkies {
   justify-content: center;
   align-items: center;
