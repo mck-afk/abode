@@ -61,11 +61,17 @@ p {
   text-align: center;
 }
 
+/*room specifics*/
+.kitchen {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px;
+}
+/*headers*/
 .dimensions {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto ;
   gap: 10px;
-  width: calc(100% - 10%);
   height: calc(100% - 10%);
   border-left: 5px solid #472516;
   border-right: 5px solid #472516;
@@ -107,14 +113,9 @@ p {
   height: calc(100% - 10%);
 }
 
-
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to { 
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
 .noticeboard {
@@ -151,15 +152,6 @@ p {
   }
 }
 
-#toggleImage {
-  position: fixed;
-  top: 10px;
-  right: 100px;
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
-}
-
 .message {
   width: 250px;
   margin: 0 auto;
@@ -169,6 +161,8 @@ p {
   margin-bottom: 40px;
   background-color: white;
 }
+
+/* colours */
 
 .white {
   background-color: white;
@@ -230,15 +224,6 @@ p {
   background-color: #fbb8ff;
 }
 
-
-.abodetable, td, th {
-  text-align: left;
-  padding: 10px;
-  border-collapse: collapse;
-	border: 1px solid black;
-  border-bottom: 2px solid white;
-}
-
 .right {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
@@ -255,30 +240,30 @@ p {
   transform: rotate(-2deg);
 }
 
-/* Navigation */
-.navbar {
-  padding: 10px;
+/* Homepage */
+#toggleImage {
+  position: fixed;
+  top: 10px;
+  right: 100px;
   display: flex;
-  align-items: center;
-  margin: 0 auto;
-  background-color: white;
+  gap: 10px;
+  z-index: 1000;
 }
 
-.navbar .links {
-  margin: auto;
-}
-.navbar a {
-  text-decoration: none;
-  padding: 6px;
-  color: black;
-}
-.navbar a:hover {
-  color: white;
+/* cross-fade */
+#abode {
+  transition: opacity 260ms ease, transform 260ms ease;
+  opacity: 1;
 }
 
-/* honeycomb */
+#abode.abode--hidden {
+  opacity: 0;
+  transform: translateY(6px);
+}
 
-.content {
+
+/* honeycomb/floorplan */
+.abode--honeycomb {
   display: flex;
   margin: auto;
   padding: 20px;
@@ -319,13 +304,17 @@ div.hexagon {
   height: 20%;
 }
 
-.kitchen {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  gap: 10px;
+
+/* dimensions/blueprint */
+.abodetable, td, th {
+  text-align: left;
+  padding: 10px;
+  border-collapse: collapse;
+	border: 1px solid black;
+  border-bottom: 2px solid white;
 }
 
-/* star */
+
 div.star {
   height: 200px;
   width: 200px;

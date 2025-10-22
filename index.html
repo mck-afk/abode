@@ -5,24 +5,14 @@
     <title>Anna's Abode</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="/Assets/icon_bold.png">
-    <script>
-        function toggleImage() {
-        var img1 = "http://127.0.0.1:5500/Assets/floorplan.png";
-        var img2 = "http://127.0.0.1:5500/Assets/blueprint.svg";
-
-        var imgElement = document.getElementById('toggleImage');
-
-        imgElement.src = (imgElement.src === img1)? img2 : img1;
-        
-        }
-    </script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="Honeycomb.js"></script>
 </head>
 <body>
     <h1>anna's abode</h1> 
     <div id="abode">
 
     </div>
-    <script type="module" src="Honeycomb.js"></script>
     <img src="Assets/floorplan.png" id="toggleImage" alt="floorplan toggle" style="width: 50px;" onclick="toggleImage();" />
     
 

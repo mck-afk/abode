@@ -1,14 +1,6 @@
-function createHoneycomb(containerId) {
-    const theEstate = [
-        {id:6, title:"6. the arboretum", subtitle:"the artist and their legacy/story", link:"./6_TheArboretum.html", dimensions:{ backgroundColor: "#ad6cf8", backgroundImage: "url('./Assets/6.jpeg')", backgroundSize: "250px" }},
-        {id:5, title:"5. the auditorium", subtitle:"the artist and their society/city", link:"./5_TheAuditorium.html", dimensions:{ backgroundColor: "#3aa6ed", backgroundImage: "url('./Assets/5.jpeg')", backgroundSize: "225px" }},
-        {id:1, title:"1. the atelier", subtitle:"the artist and their art/craft", link:"./1_TheAtelier.html", dimensions:{ backgroundColor: "#d44141", backgroundImage: "url('./Assets/1.jpeg')", backgroundSize: "300px" }},
-        {id:0, title:"0. the antechamber", subtitle:"the artist and their self", link:"./0_TheAntechamber.html", dimensions:{ backgroundColor: "#e55bed", backgroundImage: "url('./Assets/0.jpeg')", backgroundSize: "225px" }},
-        {id:4, title:"4. the atrium", subtitle:"the artist and their family/community", link:"./4_TheAtrium.html", dimensions:{ backgroundColor: "#66bd6a", backgroundImage: "url('./Assets/4.jpeg')", backgroundSize: "250px"}},
-        {id:2, title:"2. the alcove", subtitle:"the artist and their lover/muse", link:"./2_TheAlcove.html", dimensions:{ backgroundColor: "#ed7b12", backgroundImage: "url('./Assets/2.jpeg')", backgroundSize: "250px" }},
-        {id:3, title:"3. the apothecary", subtitle:"the artist and their shadow/rival", link:"./3_TheApothecary.html", dimensions:{ backgroundColor: "#ffcc00", backgroundImage: "url('./Assets/3.jpeg')", backgroundSize: "250px" }}
-    ];
+import THEABODE from './data/dimensions.js';
 
+function createHoneycomb(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
@@ -18,7 +10,13 @@ function createHoneycomb(containerId) {
     const honeycombDiv = document.createElement('div');
     honeycombDiv.className = 'honeycomb';
 
-    theEstate.forEach(room => {
+    // Render rooms in a specific order when creating the honeycomb
+    // (explicit id order requested: [6,5,1,0,4,2,3])
+    const _order = [6, 5, 1, 0, 4, 2, 3];
+    const _map = new Map(THEABODE.map(item => [item.id, item]));
+    const orderedRooms = _order.map(id => _map.get(id)).filter(Boolean);
+
+    orderedRooms.forEach(room => {
         const hexDiv = document.createElement('div');
         hexDiv.className = 'hexagon';
         hexDiv.id = room.id;
@@ -47,7 +45,7 @@ function createHoneycomb(containerId) {
 
         const h3 = document.createElement('h3');
         h3.id = room.id;
-        h3.textContent = room.title;
+        h3.textContent = room.title || room.title;
         hexDiv.appendChild(h3);
         honeycombDiv.appendChild(hexDiv);
     });
@@ -55,13 +53,119 @@ function createHoneycomb(containerId) {
     container.appendChild(honeycombDiv);
 }
 
-// Wait for DOM to load and render Honeycomb
-window.addEventListener('DOMContentLoaded', () => {
-    const container = document.createElement('div');
-    container.id = 'my-honeycomb';
-    container.className = 'content';
-    document.body.appendChild(container);
-    createHoneycomb('my-honeycomb');
-});
+// Create a blueprint table (dimensions) matching the markup in 6_TheArboretum.html
+function createBlueprint(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Clear previous blueprint content
+    const existingTable = container.querySelector('.abodetable');
+    if (existingTable) existingTable.remove();
+
+    const table = document.createElement('table');
+    table.className = 'abodetable';
+
+    // Create header
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    const headers = [
+        'ID', 'Room', 'Function', 'Realm', 'Resource', 'Relation', 'Day (Gregorian)', 'Zodiac Astrology', 'New Age Chakra System', 'The Artists Way Reference'
+    ];
+    headers.forEach(text => {
+        const th = document.createElement('th');
+        if (text === 'New Age Chakra System') {
+            const a = document.createElement('a');
+            a.href = 'https://en.wikipedia.org/wiki/Chakra#Seven_chakra_system';
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = text;
+            th.appendChild(a);
+        } else if (text === 'The Artists Way Reference') {
+            const a = document.createElement('a');
+            a.href = 'https://juliacameronlive.com/book/the-artists-way/';
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.textContent = text;
+            th.appendChild(a);
+        } else {
+            th.textContent = text;
+        }
+        headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create body
+    const tbody = document.createElement('tbody');
+    THEABODE.forEach(r => {
+        const tr = document.createElement('tr');
+        if (r.colour) tr.className = r.colour;
+
+        const tdId = document.createElement('td');
+        tdId.textContent = r.id;
+        tr.appendChild(tdId);
+
+        const tdRoom = document.createElement('td');
+        const nameDiv = document.createElement('div');
+        nameDiv.textContent = r.room.name;
+        tdRoom.appendChild(nameDiv);
+        if (r.room.subtitle) {
+            const sub = document.createElement('div');
+            const i = document.createElement('i');
+            i.textContent = r.room.subtitle;
+            sub.appendChild(i);
+            tdRoom.appendChild(sub);
+        }
+        tr.appendChild(tdRoom);
+
+        const tdFunc = document.createElement('td');
+        tdFunc.textContent = r.func;
+        tr.appendChild(tdFunc);
+
+        const tdRealm = document.createElement('td');
+        tdRealm.textContent = r.realm;
+        tr.appendChild(tdRealm);
+
+        const tdResource = document.createElement('td');
+        if (Array.isArray(r.resource)) {
+            r.resource.forEach((line, idx) => {
+                if (idx) tdResource.appendChild(document.createElement('br'));
+                const txt = document.createTextNode(line);
+                tdResource.appendChild(txt);
+            });
+        } else {
+            tdResource.textContent = r.resource || '';
+        }
+        tr.appendChild(tdResource);
+
+        const tdRelation = document.createElement('td');
+        tdRelation.textContent = r.relation;
+        tr.appendChild(tdRelation);
+
+        const tdDay = document.createElement('td');
+        tdDay.textContent = r.day;
+        tr.appendChild(tdDay);
+
+        const tdZodiac = document.createElement('td');
+        tdZodiac.textContent = r.zodiac || '';
+        tr.appendChild(tdZodiac);
+
+        const tdChakra = document.createElement('td');
+        tdChakra.textContent = r.chakra;
+        tr.appendChild(tdChakra);
+
+        const tdAW = document.createElement('td');
+        tdAW.textContent = r.artistsWay;
+        tr.appendChild(tdAW);
+
+        tbody.appendChild(tr);
+    });
+
+    table.appendChild(tbody);
+    container.appendChild(table);
+}
+
+export { createHoneycomb, createBlueprint };
+
 
 
