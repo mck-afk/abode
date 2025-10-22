@@ -10,6 +10,12 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Hexagon";
+  src: local("Hexagon"), url("./fonts/hexagon.otf/hexagon.otf") format("opentype");
+  font-weight: normal;
+}
+
 
 * {
   margin: 0 auto;
@@ -20,9 +26,9 @@
   color: black;
 }
 
-h1, h2 {
+h1 {
   text-align: center;
-  font-family: "BodoniCondC";
+  font-family: "Hexagon";
   
   padding-top: 10px;
   padding-bottom: 10px;
@@ -37,7 +43,7 @@ h3 {
 }
 
 h4 {
-  font-family: "BodoniCondC";
+  font-family: "Hexagon";
   padding-bottom: 10px;
   font-size: 20px;
 }
@@ -128,6 +134,8 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  background-image: url('./Assets/1_transparent.png');
+  border: #472516 5px solid;
 }
 
 @media (max-width: 1200px) {
@@ -141,6 +149,15 @@ p {
     width: 100%;
     margin-bottom: 20px;
   }
+}
+
+#toggleImage {
+  position: fixed;
+  top: 10px;
+  right: 100px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
 }
 
 .message {
@@ -213,18 +230,14 @@ p {
   background-color: #fbb8ff;
 }
 
-.abodetable {
-  border: 1px solid black;;
-  border-collapse: collapse;
-  font-family: GlacialIndifference;
-}
 
-td, th {
+.abodetable, td, th {
   text-align: left;
   padding: 10px;
+  border-collapse: collapse;
+	border: 1px solid black;
+  border-bottom: 2px solid white;
 }
-
-
 
 .right {
   -webkit-transform: rotate(2deg);
@@ -271,7 +284,7 @@ td, th {
   padding: 20px;
   width: calc(var(--s) * 3 + 6 * var(--m)); 
   /*variables for honeycomb & hexagons*/
-  --s: 200px;
+  --s: 240px;
   --m: 4px;
   --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
 }
