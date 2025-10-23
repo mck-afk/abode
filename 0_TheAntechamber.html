@@ -16,7 +16,12 @@
 <body class="center pink">
 
     <div class="pinklight">
-    <img id="doorknob" src="Assets/doorknob.png" alt="image of a golden door handle with wooden bindings" style="max-width: 25px; top: 10px; right: 10px; position: absolute;"  />
+        <img src="Assets/floorplan.png" id="toggleImage" alt="floorplan toggle" style="width: 50px;" onclick="toggleImage();" />
+        <div class="edge-nav">
+            <a class="nav-zone nav-left"></a>
+            <a class="nav-zone nav-right"></a>
+            <a class="nav-zone nav-bottom" href="index.html" aria-label="Go Home"></a>
+        </div>
 
         <h3>The Antechamber</h3> 
         <h4>the artist and their self</h4>
@@ -29,6 +34,10 @@
     <div class="noticeboard center">
         <div class="section log">
             <h1>Developer Log</h1>
+            <div class="message draggable">
+                <img src="Assets/0_pin.png" alt="image of a pin holding the message" style="max-width: 25px;"  />
+                <p>23/10/2025 - refactored code for better performance, added floorplan/blueprint toggle to homepage</p>
+            </div>
             <div class="message draggable">
                 <img src="Assets/0_pin.png" alt="image of a pin holding the message" style="max-width: 25px;"  />
                 <p>14/10/2025 - added more games to the Auditorium and the iconic IBM Slide 1979</p>

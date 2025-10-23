@@ -14,7 +14,12 @@
 <body class="center red">
     
     <div class="redlight">
-    <img id="doorknob" src="Assets/doorknob.png" alt="image of a golden door handle with wooden bindings" style="max-width: 25px; top: 10px; right: 10px; position: absolute;"  />
+        <img src="Assets/floorplan.png" id="toggleImage" alt="floorplan toggle" style="width: 50px;" onclick="toggleImage();" />
+        <div class="edge-nav">
+            <a class="nav-zone nav-left"></a>
+            <a class="nav-zone nav-right"></a>
+            <a class="nav-zone nav-bottom" href="index.html" aria-label="Go Home"></a>
+        </div>
 
         <h3>The Atelier</h3> 
         <h4>the artist and their craft/art</h4>
@@ -22,7 +27,7 @@
 
         </div>
 
-        <p>Welcome Home. This is the studio, the workshop, the artists nook and creative hobby corner. Craft Agnostic </p>
+        <p class="typewriter">Welcome Home. This is the studio, the workshop, the artists nook and creative hobby corner.  </p>
     </div>  
 
     <div class="desk"> 
@@ -31,14 +36,14 @@
             <img src="Assets/1.jpeg" alt="image of an artists workbench" style="max-width: 350px;" />
             <img src="Assets/1_tablet_weaving.jpg" alt="illustration of tablet weaving" style="max-width: 350px;" />
             <img src="Assets/1_crochetville.png" alt="crochetville" style="width: 350px;" onclick="window.location.href = 'https://forum.crochetville.com/'" />
-            
+            <iframe src="https://typewritesomething.com/" title="description"></iframe> 
         </div>
 
         <div class="section webcrafts">
             <h1>webcrafts</h1>
             
             <div class="messages">
-                <div class="message redlight">
+                <div class="message">
                     <h4><a href="https://en.wikipedia.org/wiki/Knowledge_argument">Mary's Room</a></h4>
                     <img src="Assets/1_candle.gif" alt="candle gif" >
                     <img src="Assets/1_computer.gif" alt="computer gif">
@@ -46,6 +51,11 @@
                     <img src="Assets/1_rubber_duck.png" alt="rubber duck" onclick="playSound('Assets/Sounds/squeak.mp3')" >
                     <img src="Assets/1_hammer.gif" alt="hammer" >
                 </div>
+                <div class="message">
+                    <a href="https://www.asciiart.eu/buildings-and-places/houses" target="_blank"><img src="Assets/1_ascii.png" style="max-width: 200px;"></a>
+                    
+                </div>
+
                 <!-- Falling confetti:
                 https://codepen.io/sadness97/pen/mdOXzNW?editors=1100
                 -->
@@ -64,6 +74,7 @@
                 <div class="message">
                     <button onclick="window.open('https://annas-archive.org/', '_blank')">the athenaeum</button>
                 </div>
+                
                 <div class="message">
                     <img src="Assets/1_wax_seal.png" alt="red wax seal">
                     <button onclick="window.open('https://annabelle-grace-mckenzie.com/weblog_20250807', '_blank')">fifth wave feminism: motherwork</button>

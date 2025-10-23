@@ -1,18 +1,19 @@
 import THEABODE from './data/dimensions.js';
 
+//This file renders the homepage
+
+// View 1 = honeycomb / floorplan
 function createHoneycomb(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Clear previous content to allow re-render
+    // clear previous content
     container.innerHTML = '';
 
     const honeycombDiv = document.createElement('div');
     honeycombDiv.className = 'honeycomb';
 
-    // Render rooms in a specific order when creating the honeycomb
-    // (explicit id order requested: [6,5,1,0,4,2,3])
-    const _order = [6, 5, 1, 0, 4, 2, 3];
+    const _order = [6, 5, 1, 0, 4, 2, 3]; 
     const _map = new Map(THEABODE.map(item => [item.id, item]));
     const orderedRooms = _order.map(id => _map.get(id)).filter(Boolean);
 
@@ -53,19 +54,19 @@ function createHoneycomb(containerId) {
     container.appendChild(honeycombDiv);
 }
 
-// Create a blueprint table (dimensions) matching the markup in 6_TheArboretum.html
+// View 2 = table / blueprint
 function createBlueprint(containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Clear previous blueprint content
+    // clear previous content
     const existingTable = container.querySelector('.abodetable');
     if (existingTable) existingTable.remove();
 
     const table = document.createElement('table');
     table.className = 'abodetable';
 
-    // Create header
+    // header
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
     const headers = [
@@ -95,11 +96,13 @@ function createBlueprint(containerId) {
     thead.appendChild(headerRow);
     table.appendChild(thead);
 
-    // Create body
+    // table body
     const tbody = document.createElement('tbody');
     THEABODE.forEach(r => {
+
         const tr = document.createElement('tr');
         if (r.colour) tr.className = r.colour;
+       
 
         const tdId = document.createElement('td');
         tdId.textContent = r.id;
@@ -107,7 +110,7 @@ function createBlueprint(containerId) {
 
         const tdRoom = document.createElement('td');
         const nameDiv = document.createElement('div');
-        nameDiv.textContent = r.room.name;
+        nameDiv.innerHTML = `<a href="${r.link}"><h3>${r.room.name}</h3></a>`;
         tdRoom.appendChild(nameDiv);
         if (r.room.subtitle) {
             const sub = document.createElement('div');
@@ -165,7 +168,91 @@ function createBlueprint(containerId) {
     container.appendChild(table);
 }
 
-export { createHoneycomb, createBlueprint };
+
+// handler for view switching 
+function renderAbodeView(containerId, view) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.dataset.abodeView = view;
+
+    const computed = window.getComputedStyle(container);
+    const hasTransition = computed.transitionDuration && computed.transitionDuration !== '0s';
+    const firstRender = !container.dataset._rendered;
+    const doImmediate = firstRender || !hasTransition;
+
+    const replaceContent = () => {
+        container.innerHTML = '';
+        if (view === 'blueprint') {
+            createBlueprint(containerId);
+        } else {
+            createHoneycomb(containerId);
+        }
+        container.dataset._rendered = '1';
+        container.classList.remove('abode--honeycomb', 'abode--blueprint');
+        container.classList.add(view === 'blueprint' ? 'abode--blueprint' : 'abode--honeycomb');
+        container.classList.remove('abode--hidden');
+    };
+
+    if (doImmediate) {
+        replaceContent();
+        return;
+    }
+
+    container.classList.add('abode--hidden');
+
+    let handled = false;
+    const finish = () => {
+        if (handled) return;
+        handled = true;
+        replaceContent();
+    };
+
+    const onTransitionEnd = (e) => {
+        if (e.target === container && (e.propertyName === 'opacity' || e.propertyName === 'transform')) {
+            container.removeEventListener('transitionend', onTransitionEnd);
+            finish();
+        }
+    };
+    container.addEventListener('transitionend', onTransitionEnd);
+    setTimeout(finish, 400);
+}
 
 
 
+//event listener
+
+window.toggleAbode = function() { 
+    const img1 = 'Assets/floorplan.png';
+    const img2 = 'Assets/blueprint.svg';
+    const imgElement = document.getElementById('toggleAbode');
+    if (!imgElement) return;
+
+    // determine current view (prefer dataset.view)
+    const currentView = imgElement.dataset.view || ((imgElement.src && imgElement.src.toLowerCase().indexOf('blueprint') !== -1) ? 'blueprint' : 'honeycomb');
+    const nextView = currentView === 'blueprint' ? 'honeycomb' : 'blueprint';
+
+    imgElement.dataset.view = nextView;
+    imgElement.src = nextView === 'blueprint' ? img2 : img1;
+
+    // Dispatch the custom event to notify listeners
+    imgElement.dispatchEvent(new CustomEvent('abode:viewchange', { detail: { view: nextView } }));
+};
+
+//initialise
+
+window.addEventListener('DOMContentLoaded', () => { 
+    const toggleImg = document.getElementById('toggleAbode');
+    let initialView = 'honeycomb'; // always start with floorplan on homepage
+    if (toggleImg) {
+        toggleImg.dataset.view = initialView;
+        toggleImg.src = 'Assets/floorplan.png';
+        toggleImg.addEventListener('abode:viewchange', (ev) => {
+            const v = ev && ev.detail && ev.detail.view ? ev.detail.view : null;
+            if (v) {
+                try { localStorage.setItem('abode:view', v); } catch (err) {}
+                renderAbodeView('abode', v);
+            }
+        });
+    }
+    renderAbodeView('abode', initialView);
+});

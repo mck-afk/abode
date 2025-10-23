@@ -61,6 +61,39 @@ p {
   text-align: center;
 }
 
+
+/* navigation zones (left, right, bottom) */
+.edge-nav .nav-zone {
+  position: fixed;
+  z-index: 9999;
+  color: #fff;
+  text-decoration: none;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .24s, opacity .24s, transform .24s;
+  background: var(--nav-bg, #e55bed);
+}
+
+.edge-nav .nav-left { left: 0; top: 0; width: 4vw; height: 100%; }
+.edge-nav .nav-right { right: 0; top: 0; width: 4vw; height: 100%; }
+.edge-nav .nav-bottom { left: 0; right: 0; bottom: 0; height: 5vh; }
+
+/* Visibility helper: toggle .edge-nav--visible on the container to show/hide zones
+   Keeps presentation in CSS rather than inline styles. When not visible, nav-zones
+   are removed from hit-testing and hidden via opacity for smooth transitions. */
+.edge-nav:not(.edge-nav--visible) .nav-zone {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.edge-nav.edge-nav--visible .nav-zone {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 /*room specifics*/
 .kitchen {
   display: grid;
@@ -105,7 +138,7 @@ p {
   height: 40px;
 }
 
-.city {
+.fourcol {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 10px;
@@ -240,8 +273,8 @@ p {
   transform: rotate(-2deg);
 }
 
-/* Homepage */
-#toggleImage {
+/* view toggles */
+#toggleAbode, #toggleImage {
   position: fixed;
   top: 10px;
   right: 100px;
@@ -259,6 +292,30 @@ p {
 #abode.abode--hidden {
   opacity: 0;
   transform: translateY(6px);
+}
+
+/* typewriter effect*/
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
 }
 
 
@@ -323,4 +380,22 @@ div.star {
   text-align: center;
   line-height: 200px;
   display: inline-block;
+}
+
+/* envelope */
+
+.envelope{
+  border: 1px solid white;
+  border-top: 1px solid lightblue;
+  height: 120px;
+  width: 200px;
+  background-color: white;
+  position: relative;
+}
+
+.envelope-flap {
+  position: absolute;
+  border-top: 50px solid lightblue;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
 }

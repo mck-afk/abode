@@ -9,47 +9,61 @@
 </head>
 <body class="center blue">
     <div class="bluelight">
-    <img id="doorknob" src="Assets/doorknob.png" alt="image of a golden door handle with wooden bindings" style="max-width: 25px; top: 10px; right: 10px; position: absolute;"  />
-
-        <h3>The Auditorium</h3> 
-        <h4>the artist and their audience/city</h4>
-        <div class="dimensions">
-            <div>
-                <h4>numerology</h4>
-                <p>5</p>
-            </div>
-            <div>
-                <h4>astrology axis</h4>
-                <p>leo/aquarius</p>
-            </div>
-            <div>
-                <h4>  major arcana</h4>
-                <p>5. The Hierophant</p>
-            </div>
-            <div>
-                <h4>chakra</h4>
-                <p>5. The Throat - Vishuddha</p>
-            </div>
+        <img src="Assets/floorplan.png" id="toggleImage" alt="floorplan toggle" style="width: 50px;" onclick="toggleImage();" />
+        <div class="edge-nav">
+            <a class="nav-zone nav-left"></a>
+            <a class="nav-zone nav-right"></a>
+            <a class="nav-zone nav-bottom" href="index.html" aria-label="Go Home"></a>
         </div>
 
+        <h3>The Auditorium</h3> 
         <p>Welcome Home. This is the lounge room, where we visit our neighbours, play games, and share our skills.</p>
+        <div class="dimensions"></div>
     </div> 
 
-    <img src="Assets/5.jpeg" alt="image of an auditorium" style="max-width: 350px;" />
-    <img src="Assets/IBM_slide_1979.jpg" style="max-width: 350px; border: 5px inset brown;">
-    <img src="Assets/windows_11_upgrade.jpeg" style="max-width: 350px;" >
-    <img src="Assets/1_computer.gif" style="width: 100px;">
+    <div class="fourcol">
+        <img src="Assets/5.jpeg" alt="image of an auditorium" style="max-width: 250px;" />
+        <img src="Assets/IBM_slide_1979.jpg" style="max-width: 350px; border: 5px inset brown;">
+        <img src="Assets/windows_11_upgrade.jpeg" style="max-width: 350px;" >
+
+        <div>
+            <div class="envelope" onclick="window.location.href = 'https://letterstoayoungtechnologist.com/'">
+            <div class="envelope-flap"></div>
+            <h4><br><br>letters to young technologists</h4> <!--https://codepen.io/pinsdabarra_/pen/yLRYVBK-->
+        </div>
+        <div>
+                <h2> <span id="daysLive"></span> days alive in <img src="Assets/1_computer.gif"> </h2>
+                
+                <script  type="text/javascript">
+                    var initialDate = new Date(2025, 8, 30)
+                    var now = Date.now();
+                    var difference = now - initialDate;
+                    var millisecondsPerDay = 24 * 60 * 60 * 1000;
+                    var daysSince = Math.floor(difference / millisecondsPerDay);
+
+                    document.getElementById('daysLive').innerHTML = daysSince.toString();
+                </script>
+            </div>
+        </div>
         
-    <div class="city">
+    </div>
+    
+    
+        
+    <div class="fourcol">
         <div class="vertical">
-            <h2>leave your mark</h2>
+            <h1>leave your mark</h1>
             <a href="https://we-b.site/" target="_blank"><img src="Assets/5_letter.png" style="max-width: 200px;"></a>
             <a href="https://www.publictypewriter.com/" target="_blank"><img src="Assets/5_typewriter.png" style="max-width: 200px;"></a>
+            <img src="Assets/5_inspect.png" style="max-width: 200px;"/>
+
+            
+            
             
         </div>
 
         <div class="vertical">
-        <h2>play games</h2>
+        <h1>play games</h1>
             <a href="https://www.numuki.com/game/barbie-s-game-room/" target="_blank"><img src="Assets/5_barbiegameroom.png" style="max-width: 200px;"></a>  
             <div class="twocol">
                 <a href="https://neal.fun/" target="_blank"><img src="Assets/5_neal.png" style="max-width: 100px;"></a>
@@ -62,46 +76,54 @@
             </div>  
         </div>
 
-        <div>
-            <h2>novel networks</h2>
-            <a href="https://www.are.na/" target="_blank"><img src="Assets/5_aredotna.png" style="width: 50px;"></a>
-            <a href="https://bsky.app/" target="_blank"><img src="Assets/5_bluesky.png" style="width: 50px;"></a>
-            <a href="https://newpublic.substack.com/p/how-blacksky-grew-to-millions-of" target="_blank"><img src="Assets/5_blacksky.png" style="width: 50px;"></a>
-        </div>
-
         <div class="vertical">
-            <h2>cybercity</h2>
+            <h1>explore cybercity</h1>
             <div class="webrings">
-                <map name="noaitxtwidget">
+            <map name="noaitxtwidget">
                 <area href="https://baccyflap.com/noai" target="_blank" shape="rect" coords="28,0,219,30" alt="no ai webring" title="no ai webring">
                 <area href="https://baccyflap.com/noai/?prv&s=aaa" target="_top" shape="rect" coords="0,0,27,30" alt="previous" title="previous">
                 <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="221,6,235,25" alt="random" title="random">
                 <area href="https://baccyflap.com/noai/?nxt&s=aaa" target="_top" shape="rect" coords="239,0,263,30" alt="next" title="next">
                 </map>
-                <img usemap="#noaitxtwidget" src="https://baccyflap.com/noai/txtwidget-light.gif" alt="a white rectangular box with a dashed outline with the words 'the no ai webring' in the centre, with a parenthetical question mark next to it and two arrows pointing left and right to either side">
+                <img usemap="#noaitxtwidget" src="https://baccyflap.com/noai/txtwidget-light.gif" alt="a white rectangular box with a dashed outline with the words 'the no ai webring' in the centre, with a parenthetical question mark next to it and two arrows pointing left and right to either side"> 
             </div>
             <div class="neighbours">
                 <a href="http://femicom.org/research/" target="_blank"><img src="Assets/5_femicom.png" style="max-width: 88px; height: 31px;"></a>
                 <a href="https://geocities.restorativland.org/" target="_blank"><img src="Assets/5_geocities.png" style="max-width: 88px; height: 31px;"></a>
                 <a href="https://32bit.cafe/" target="_blank"><img src="https://32bit.cafe/linktous/32b-trad-rgb.png"></a>
+                <a href="https://blog.avas.space/" target="_blank"><img src="Assets/5_avasblog.png" style="max-width: 88px; height: 31px;"></a>
                 <a href="https://neocities.org/site/annas-abode" target="_blank"><img src="Assets/neocities_button.gif"></a>
-                
                 <a href="https://inkcaps.neocities.org/" target="_blank"><img src="https://inkcaps.neocities.org/home/inkcapsbutton.gif"></a>
                 <a href="https://bluemeadows.moe" target="_blank"><img src="https://bluemeadows.moe/images/bluemeadows_88x31.gif"></a>
-                <a href="https://cabbagesorter.neocities.org/" target="_blank"><img src="https://cabbagesorter.neocities.org/BUTTONS/cabbagesorter2.gif"></a>
+                <a href="https://cabbagesorter.net/" target="_blank"><img src="https://cabbagesorter.net/assets/images/layout-5/cabbagesorter.gif"></a>
                 <a href="https://melonland.net/" target="_blank"><img src="https://melonland.net/images/melonland-badge-2.gif"></a>
                 <a href="https://getcubed.neocities.org/" target="_blank"><img src="https://getcubed.neocities.org/getcubed2/images/accounts/gc-icon4.png"></a>
                 <a href="https://eggramen.neocities.org" title="Eggramen" target="_blank"><img src="https://eggramen.neocities.org/elsewhere/my_button/eggramen_button_simple.png"></a>
                 <a href="https://lu.tiny-universes.net/index2.html" target="_blank"><img src="https://lu.tiny-universes.net/images-links/wannachill.gif"></a>
                 <a href="https://aralsheart.nekoweb.org/"><img src="https://aralsheart.nekoweb.org/images/button.png" alt="Aral's Heart"></a>
+                <a href="https://www.are.na/anne-lee-steele/tender-web" target="_blank"><img src="Assets/5_anneleesteele.png" style="width: 88px; height: 31px;"></a>
                 <a href="https://maggieappleton.com/"><img src="/Assets/5_maggie.png" alt="Maggie Appleton" style="width: 88px; height: 31px;"></a>
+                <a href="https://ascii.designforthe.net/" target="_blank"><img src="Assets/5_asciiTown.png" style="width: 88px; height: 31px;"></a>
+                <a href="https://jeansgurl98.com/" target="_blank"><img src="https://jeansgurl98.com/butts/jeanworld.gif" alt="jeansgirl98"></a>
+                <a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a>
+                
+                <a href="https://annas-abode.net/" target="_blank"><img src="Assets/annas_abode.gif"></a>
+                <textarea style="width: 88px; height: 25px;"><a href="https://annas-abode.net/" target="_blank"><img src="https://annas-abode.net/Assets/annas_abode.gif"></a></textarea>
+                <span>link to me!<br><-</span>
             </div>
-        
-            <h2>link to me:</h2>
-            <a href="https://annas-abode.net/" target="_blank"><img src="Assets/annas_abode.gif"></a>
-            <textarea style="width: 88px;"><a href="https://annas-abode.net/" target="_blank"><img src="https://annas-abode.net/Assets/annas_abode.gif"></a></textarea>
+            
+        </div>
+
+        <div>
+            <h1>coding essentials</h1>
+            <a href="https://make.yourownwebsite.org/" target="_blank"><img src="Assets/5_makeyourown.png" style="max-width: 88px; height: 31px;"></a>
+            <a href="https://nandgame.com/" target="_blank"><img src="Assets/5_nandgame.png" style="max-width: 88px; height: 31px;"></a>
+            <a href="https://learngitbranching.js.org/" target="_blank"><img src="Assets/5_gitgame.png" style="max-width: 88px; height: 31px;"></a>
+
+            
         </div>
     </div>
    
 </body>
 </html>
+
