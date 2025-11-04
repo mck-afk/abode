@@ -70,7 +70,7 @@ function createBlueprint(containerId) {
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
     const headers = [
-        'ID', 'Room', 'Function', 'Realm', 'Resource', 'Relation', 'Day (Gregorian)', 'Zodiac Astrology', 'New Age Chakra System', 'The Artists Way Reference'
+        'ID', 'Room', 'Function', 'Realm', 'Resource', 'Relation', 'Day', 'Zodiac Astrology', 'New Age Chakra System', 'The Artists Way Reference'
     ];
     headers.forEach(text => {
         const th = document.createElement('th');

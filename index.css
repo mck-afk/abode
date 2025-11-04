@@ -93,6 +93,9 @@ p {
   pointer-events: auto;
 }
 
+.books img {
+  width: 180px;
+}
 
 /*room specifics*/
 .kitchen {

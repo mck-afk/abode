@@ -17,8 +17,10 @@
         </div>
 
         <h3>The Auditorium</h3> 
-        <p>Welcome Home. This is the lounge room, where we visit our neighbours, play games, and share our skills.</p>
+        <h4>the artist converses with their society</h4>
         <div class="dimensions"></div>
+
+        <p class="typewriter">Welcome Home. This is the lounge room, where we visit our neighbours, play games, and share our skills.</p>
     </div> 
 
     <div class="fourcol">
@@ -26,24 +28,26 @@
         <img src="Assets/IBM_slide_1979.jpg" style="max-width: 350px; border: 5px inset brown;">
         <img src="Assets/windows_11_upgrade.jpeg" style="max-width: 350px;" >
 
+        
+        
         <div>
-            <div class="envelope" onclick="window.location.href = 'https://letterstoayoungtechnologist.com/'">
-            <div class="envelope-flap"></div>
-            <h4><br><br>letters to young technologists</h4> <!--https://codepen.io/pinsdabarra_/pen/yLRYVBK-->
-        </div>
-        <div>
-                <h2> <span id="daysLive"></span> days alive in <img src="Assets/1_computer.gif"> </h2>
-                
-                <script  type="text/javascript">
-                    var initialDate = new Date(2025, 8, 30)
-                    var now = Date.now();
-                    var difference = now - initialDate;
-                    var millisecondsPerDay = 24 * 60 * 60 * 1000;
-                    var daysSince = Math.floor(difference / millisecondsPerDay);
+            <h2> <span id="daysLive"></span> days alive in <img src="Assets/1_computer.gif"> </h2>
+            
+            <script  type="text/javascript">
+                var initialDate = new Date(2025, 8, 30)
+                var now = Date.now();
+                var difference = now - initialDate;
+                var millisecondsPerDay = 24 * 60 * 60 * 1000;
+                var daysSince = Math.floor(difference / millisecondsPerDay);
 
-                    document.getElementById('daysLive').innerHTML = daysSince.toString();
-                </script>
+                document.getElementById('daysLive').innerHTML = daysSince.toString();
+            </script>
+            
+            <div class="envelope" style="cursor:pointer;" onclick="window.location.href = 'https://letterstoayoungtechnologist.com/'">
+                <div class="envelope-flap"></div>
+                <h4><br><br>letters to young technologists</h4> <!--https://codepen.io/pinsdabarra_/pen/yLRYVBK-->
             </div>
+
         </div>
         
     </div>
@@ -52,13 +56,14 @@
         
     <div class="fourcol">
         <div class="vertical">
-            <h1>leave your mark</h1>
-            <a href="https://we-b.site/" target="_blank"><img src="Assets/5_letter.png" style="max-width: 200px;"></a>
-            <a href="https://www.publictypewriter.com/" target="_blank"><img src="Assets/5_typewriter.png" style="max-width: 200px;"></a>
-            <img src="Assets/5_inspect.png" style="max-width: 200px;"/>
+            <h1>influence interwebs</h1>
+            <a href="https://we-b.site/" target="_blank"><img src="Assets/5_letter.png" style="width: 200px;"></a>
+            <a href="https://www.publictypewriter.com/" target="_blank"><img src="Assets/5_typewriter.png" style="width: 200px;"></a>
+            <a href="https://gifcities.org/" target="_blank"><img src="Assets/5_gifcities.png" style="width: 200px;"/></a>
+            <a href="https://www.glitter-graphics.com/" target="_blank"><img src="Assets/5_gifglitter.png" style="width: 200px;"></a>
+            <a href="https://blinkies.cafe/" target="_blank"><img src="Assets/5_blinkiescafe.gif" style="width: 200px;"></a>
 
-            
-            
+            <img src="Assets/5_inspect.png" style="max-width: 200px;"/>
             
         </div>
 
@@ -69,9 +74,13 @@
                 <a href="https://neal.fun/" target="_blank"><img src="Assets/5_neal.png" style="max-width: 100px;"></a>
                 <a href="https://ladiesgamers.com/" target="_blank"><img src="https://ladiesgamers.com/wp-content/uploads/2025/10/cropped-Banner_LG-generic-Fall.jpg" style="max-width: 100px;"></a>
                 <a href="https://explorabl.es/" target="_blank"><img src="Assets/5_explorable.png" style="max-width: 100px;"></a>
+                <a href="https://domino.gallery/" target="_blank"><img src="Assets/5_domino.png" style="max-width: 100px;"></a>
+                <a href="https://hypertext.tv/" target="_blank"><img src="Assets/5_hypertextv.png" style="max-width: 100px;"></a>
                 <a href="https://genericgeekgirl.com/games/index.html" target="_blank"><img src="Assets/5_geekgirl.png" style="max-width: 100px;"></a>
                 <a href="https://www.fallenlondon.com/" target="_blank"><img src="Assets/5_fallenlondon.png" style="max-width: 100px;"></a>
                 <a href="https://www.glorioustrainwrecks.com/node/10" target="_blank"><img src="https://www.glorioustrainwrecks.com/GloriousTrainwrecks.png" style="max-width: 100px;"></a>
+                <a href="https://theuselessweb.com/" target="_blank"><img src="Assets/5_useless.png" style="max-width: 100px;"></a>
+                <a href="https://haxiomic.github.io/GPU-Fluid-Experiments/html5/?q=High" target="_blank"><img src="Assets/5_fluid.png" style="max-width: 100px;"></a>
                 
             </div>  
         </div>
@@ -114,13 +123,19 @@
             
         </div>
 
-        <div>
-            <h1>coding essentials</h1>
-            <a href="https://make.yourownwebsite.org/" target="_blank"><img src="Assets/5_makeyourown.png" style="max-width: 88px; height: 31px;"></a>
-            <a href="https://nandgame.com/" target="_blank"><img src="Assets/5_nandgame.png" style="max-width: 88px; height: 31px;"></a>
-            <a href="https://learngitbranching.js.org/" target="_blank"><img src="Assets/5_gitgame.png" style="max-width: 88px; height: 31px;"></a>
-
+        <div >
+            <h1>beginner computer</h1>
+            <div class="twocol" >
+                <a href="https://make.yourownwebsite.org/" target="_blank"><img src="Assets/5_makeyourown.png" style="max-width: 88px; height: 31px;"></a>
+                <a href="https://nandgame.com/" target="_blank"><img src="Assets/5_nandgame.png" style="max-width: 88px; height: 31px;"></a>
+                <a href="https://learngitbranching.js.org/" target="_blank"><img src="Assets/5_gitgame.png" style="max-width: 88px; height: 31px;"></a>
+                <a href="https://aboutfeeds.com/" target="_blank"><img src="Assets/5_aboutfeeds.png" style="max-width: 88px; height: 31px;"></a>
+                
+            </div>
+            <h1>backintime computer</h1>
             
+            <a href="https://netstalgia.netlify.app/" target="_blank"><img src="Assets/5_windows95.gif" style="max-width: 250px"></a>
+            <p>^ click me! ^</p>
         </div>
     </div>
    
