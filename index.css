@@ -97,6 +97,16 @@ p {
   width: 180px;
 }
 
+.bookshelf {
+  width: calc(180*5);
+  height: 20px;
+  display: flex;
+  background-image: linear-gradient(#472516 0 70%, #472516  70% 100%);
+  justify-content: space-around;
+  box-shadow: 0 10px 15px -2px #472516 ;
+  border-radius: 2px;
+}
+
 /*room specifics*/
 .kitchen {
   display: grid;
