@@ -109,9 +109,9 @@ p {
 
 /*room specifics*/
 .kitchen {
-  display: grid;
+  /*display: grid;
   grid-template-columns: auto auto auto auto auto;
-  gap: 10px;
+  gap: 10px;*/
 }
 /*headers*/
 .dimensions {
